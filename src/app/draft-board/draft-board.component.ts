@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayerService } from '../player.service';
+import { Router } from '@angular/router';
+import { Player } from '../player.model';
+
+
 
 
 @Component({
   selector: 'app-draft-board',
   templateUrl: './draft-board.component.html',
-  styleUrls: ['./draft-board.component.css']
+  styleUrls: ['./draft-board.component.css'],
   providers: [PlayerService]
 })
 export class DraftBoardComponent implements OnInit {
-  players: PLayer[];
+  players: Player[];
 
   constructor(
     private router: Router,

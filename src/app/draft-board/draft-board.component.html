@@ -1,4 +1,10 @@
 <div class="container">
   <h1>Welcome to the Draft Board</h1>
 
+  <div *ngFor="let player of players"  class="panel panel-default">
+    <div class="panel-body">
+      <h3>Player: <em>{{player.name}}</em> </h3>
+    </div>
+  </div>
+
 </div>
