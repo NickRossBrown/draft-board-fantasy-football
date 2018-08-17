@@ -10,11 +10,11 @@ import { routing } from './app.routing';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    routing
+    HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
