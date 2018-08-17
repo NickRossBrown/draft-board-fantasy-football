@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { routing } from './app.routing';
 import { AboutComponent } from './about/about.component';
 import { DraftBoardComponent } from './draft-board/draft-board.component';
+import { PlayerDetailComponent } from './player-detail/player-detail.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { DraftBoardComponent } from './draft-board/draft-board.component';
     AppComponent,
     HomeComponent,
     AboutComponent,
-    DraftBoardComponent
+    DraftBoardComponent,
+    PlayerDetailComponent
   ],
   imports: [
     BrowserModule,

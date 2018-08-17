@@ -25,4 +25,8 @@ export class DraftBoardComponent implements OnInit {
     this.players = this.playerService.getPlayers();
   }
 
+  goToPlayerPage(clickedPlayer: Player) {
+     this.router.navigate(['player', clickedPlayer.id]);
+   };
+
 }
