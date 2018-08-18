@@ -11,8 +11,8 @@ import { PlayerService } from '../player.service';
   providers: [PlayerService]
 })
 export class PlayerDetailComponent implements OnInit {
-  PlayerID: number;
-  PlayerToDisplay: Player;
+  playerId: number;
+  playerToDisplay: Player;
 
   constructor(
     private route: ActivatedRoute, private location: Location,

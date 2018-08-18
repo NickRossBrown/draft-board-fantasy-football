@@ -1,10 +1,45 @@
-<div class="container">
-  <h1>Welcome to the Draft Board</h1>
+<h1>Welcome to the Draft Board</h1>
+<div class="draftBoard">
 
-  <div *ngFor="let player of players" (click)="goToPlayerPage(player)" class="panel panel-default">
-    <div class="panel-body">
-      <h3>Player: <em>{{player.name}}</em> </h3>
+  <div class="undrafted">
+    <h3>undrafted</h3>
+    <div *ngFor="let player of players" (click)="goToPlayerPage(player)">
+        <p>Player:{{player.name}} </p>
     </div>
   </div>
+  <div class="WR">
+    <h3>WIDE RECIEVER</h3>
+    <div>
+    </div>
+  </div>
+  <div class="RB">
+    <h3>RB</h3>
+    <div *ngFor="let player of players" (click)="goToPlayerPage(player)">
+        <p>Player:{{player.name}} </p>
+    </div>
+  </div>
+  <div class="QB">
+    <h3>QB</h3>
+    <div >
+    </div>
+  </div>
+  <div class="TE">
+    <h3>TE</h3>
+    <div *ngFor="let player of players" (click)="goToPlayerPage(player)">
+        <p>Player:{{player.name}} </p>
+    </div>
+  </div>
+
+  <div class="drafted">
+    <h3>drafted</h3>
+    <div *ngFor="let player of players" (click)="goToPlayerPage(player)">
+        <p>Player:{{player.name}} </p>
+    </div>
+  </div>
+
+  <div class="empty">
+
+  </div>
+
 
 </div>

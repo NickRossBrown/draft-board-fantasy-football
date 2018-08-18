@@ -1,0 +1,50 @@
+
+.draftBoard {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+
+  justify-content: space-between;
+  background: lightgrey;
+  /* align-content: space-between; */
+
+}
+
+* {
+  outline: 2px solid;
+}
+
+.undrafted {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  background: lightgreen;
+
+
+}
+
+.WR {
+  grid-column: 2;
+
+  background: lightgreen;
+}
+
+.QB{
+  grid-column: 2;
+
+  background: pink;
+}
+
+.RB {
+  grid-column: 3;
+}
+
+.TE {
+  grid-column: 3;
+}
+
+.drafted {
+  grid-column: 4;
+  grid-row: 1 / 3;
+  background: lightblue;
+
+
+}
