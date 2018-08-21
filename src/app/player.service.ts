@@ -10,6 +10,11 @@ export class PlayerService {
   getPlayers() {
     return PLAYERS;
   }
+  
+  getUndraftedPlayers() {
+    return PLAYERS;
+  }
+
 
   getPlayerById(playerId: number){
     for (var i = 0; i <= PLAYERS.length - 1; i++) {

@@ -4,7 +4,10 @@
   <div class="undrafted">
     <h3>undrafted</h3>
     <div *ngFor="let player of players" (click)="goToPlayerPage(player)">
+      <div *ngIf="player.drafted === false">
         <p>Player:{{player.name}} </p>
+
+      </div>
     </div>
   </div>
   <div class="WR">
@@ -12,12 +15,12 @@
     <div>
     </div>
   </div>
-  <div class="RB">
+  <!-- <div class="RB">
     <h3>RB</h3>
-    <div *ngFor="let player of players" (click)="goToPlayerPage(player)">
+    <div *ngFor="let player of undraftedPlayers; let i = index" >
         <p>Player:{{player.name}} </p>
     </div>
-  </div>
+  </div> -->
   <div class="QB">
     <h3>QB</h3>
     <div >
@@ -25,7 +28,7 @@
   </div>
   <div class="TE">
     <h3>TE</h3>
-    <div *ngFor="let player of players" (click)="goToPlayerPage(player)">
+    <div *ngFor="let player of undraftedPlayers; let i=index" (click)="draftPlayer(i)">
         <p>Player:{{player.name}} </p>
     </div>
   </div>
@@ -35,10 +38,6 @@
     <div *ngFor="let player of players" (click)="goToPlayerPage(player)">
         <p>Player:{{player.name}} </p>
     </div>
-  </div>
-
-  <div class="empty">
-
   </div>
 
 

@@ -4,6 +4,8 @@ export class Player {
     public name: string,
     public position: string,
     public ranking: number,
-    public id: number) { }
+    public id: number,
+    public drafted: boolean
+  ) { }
 
 }
