@@ -10,27 +10,34 @@
       </div>
     </div>
   </div>
-  <div class="WR">
-    <h3>WIDE RECIEVER</h3>
-    <div>
+  <div id="list-box">
+
+    <div class="list-box" id="WR">
+      <h3>WIDE RECIEVER</h3>
+      <div>
+      </div>
     </div>
-  </div>
-  <!-- <div class="RB">
-    <h3>RB</h3>
-    <div *ngFor="let player of undraftedPlayers; let i = index" >
-        <p>Player:{{player.name}} </p>
+
+    <div class="list-box" id="RB">
+      <h3>RB</h3>
+      <div *ngFor="let player of undraftedPlayers; let i = index" >
+          <p>Player:{{player.name}} </p>
+      </div>
     </div>
-  </div> -->
-  <div class="QB">
-    <h3>QB</h3>
-    <div >
+
+    <div class="list-box" id="QB">
+      <h3>QB</h3>
+      <div >
+      </div>
     </div>
-  </div>
-  <div class="TE">
-    <h3>TE</h3>
-    <div *ngFor="let player of undraftedPlayers; let i=index" (click)="draftPlayer(i)">
-        <p>Player:{{player.name}} </p>
+
+    <div id="TE">
+      <h3>TE</h3>
+      <div *ngFor="let player of undraftedPlayers; let i=index" (click)="draftPlayer(i)">
+          <p>Player:{{player.name}} </p>
+      </div>
     </div>
+
   </div>
 
   <div class="drafted">

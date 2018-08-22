@@ -1,9 +1,9 @@
 
 .draftBoard {
-  display: grid;
-  grid-template-columns: 20% 20% 20% 20%;
+  display:grid;
+  grid-template-columns: 2fr 4fr 2fr;
 
-  justify-content: space-between;
+  /* justify-content: space-between; */
   background: lightgrey;
   /* align-content: space-between; */
 
@@ -12,39 +12,53 @@
 * {
   outline: 2px solid;
 }
+.drafted {
+  grid-column: 3;
+  grid-row: 1 / 3;
+  background: lightblue;
+  overflow: scroll;
 
+
+}
+#list-box {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
 .undrafted {
   grid-column: 1;
   grid-row: 1 / 3;
   background: lightgreen;
+  overflow: scroll;
 
 
 }
 
-.WR {
-  grid-column: 2;
-
+#WR {
+  grid-column: 1;
+  grid-row: 1;
   background: lightgreen;
+  overflow: hidden;
 }
 
-.QB{
-  grid-column: 2;
-
+#QB{
+  grid-column: 1;
+  grid-row: 2;
   background: pink;
+  overflow: hidden;
 }
 
-.RB {
-  grid-column: 3;
+#RB {
+  grid-column: 2;
+  grid-row: 1;
+  background: purple;
+  overflow: hidden;
 }
 
-.TE {
-  grid-column: 3;
-}
-
-.drafted {
-  grid-column: 4;
-  grid-row: 1 / 3;
-  background: lightblue;
-
-
+#TE {
+  grid-column: 2;
+  grid-row: 2;
+  background: orange;
+  overflow: hidden;
 }
