@@ -40,7 +40,11 @@ export class DraftBoardComponent implements OnInit {
      this.router.navigate(['player', clickedPlayer.id]);
    };
 
-   draftPlayer(i) {
+   draftPlayer(player,i) {
+     console.log(player.drafted)
+     player.drafted = true
+     this.undraftedPlayers.push(player)
+     console.log(player.drafted)
      this.players.splice(i,1)
    }
 

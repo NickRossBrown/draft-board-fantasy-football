@@ -14,26 +14,35 @@
 
     <div class="list-box" id="WR">
       <h3>WIDE RECIEVER</h3>
-      <div>
+      <div *ngFor="let player of players; let i = index" >
+          <div *ngIf="player.position === 'WR'" >
+            <p>Player:{{player.name}}--{{player.position}}</p>
+
+          </div>
       </div>
     </div>
 
     <div class="list-box" id="RB">
       <h3>RB</h3>
-      <div *ngFor="let player of undraftedPlayers; let i = index" >
-          <p>Player:{{player.name}} </p>
+      <div *ngFor="let player of players; let i = index" >
+          <div *ngIf="player.position === 'RB'" >
+            <p>Player:{{player.name}}--{{player.position}}  </p>
+          </div>
       </div>
     </div>
 
     <div class="list-box" id="QB">
       <h3>QB</h3>
-      <div >
+      <div *ngFor="let player of players; let i = index" >
+          <div *ngIf="player.position === 'QB'" >
+            <p>Player:{{player.name}}--{{player.position}}  </p>
+          </div>
       </div>
     </div>
 
     <div id="TE">
       <h3>TE</h3>
-      <div *ngFor="let player of undraftedPlayers; let i=index" (click)="draftPlayer(i)">
+      <div *ngFor="let player of players; let i=index" (click)="draftPlayer(player,i)">
           <p>Player:{{player.name}} </p>
       </div>
     </div>
@@ -42,8 +51,11 @@
 
   <div class="drafted">
     <h3>drafted</h3>
-    <div *ngFor="let player of players" (click)="goToPlayerPage(player)">
+    <div *ngFor="let player of undraftedPlayers" (click)="goToPlayerPage(player)">
+      <div *ngIf="player.drafted === true">
         <p>Player:{{player.name}} </p>
+
+      </div>
     </div>
   </div>
 
