@@ -1,39 +1,61 @@
 
 .draftBoard {
   display:grid;
-  grid-template-columns: 2fr 4fr 2fr;
+  grid-template-columns: 3fr 4fr 3fr;
 
   /* justify-content: space-between; */
   background: lightgrey;
   /* align-content: space-between; */
-  grid-template-rows: 800px;
+  grid-template-rows: 20px 800px;
+  position: fixed;
+  grid-gap: 30px;
+  outline: 2px;
+  border-style: double;
 
 }
 
-* {
+/* * {
   outline: 2px solid;
+} */
+
+#undratedHeader {
+  grid-column: 1;
+  grid-row: 1;
+  text-align: center;
 }
+#picksByPositionHeader {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: center;
+}
+#dratedHeader {
+  grid-column: 3;
+  grid-row: 1;
+  text-align: center;
+}
+
 .drafted {
   grid-column: 3;
-  grid-row: 1 / 3;
+  grid-row: 2;
   background: lightblue;
   overflow: scroll;
-
+  outline: 2px;
+  border-style: groove;
 
 }
 #list-box {
     grid-column: 2;
+    grid-row: 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 }
 .undrafted {
   grid-column: 1;
-  grid-row: 1 / 3;
+  grid-row: 2;
   background: lightgreen;
   overflow: scroll;
-
-
+  cursor: pointer;
 }
 
 #WR {
@@ -41,6 +63,8 @@
   grid-row: 1;
   background: lightgreen;
   overflow: hidden;
+  border-style: groove;
+
 }
 
 #QB{
@@ -48,6 +72,8 @@
   grid-row: 2;
   background: pink;
   overflow: hidden;
+  border-style: ridge;
+
 }
 
 #RB {
@@ -55,6 +81,7 @@
   grid-row: 1;
   background: purple;
   overflow: hidden;
+  border-style: inset;
 }
 
 #TE {
@@ -62,4 +89,15 @@
   grid-row: 2;
   background: orange;
   overflow: hidden;
+  border-style: inset;
+}
+.player {
+  outline: 1px solid;
+}
+h3 {
+  text-align: center;
+}
+
+p {
+  margin: 0px;
 }

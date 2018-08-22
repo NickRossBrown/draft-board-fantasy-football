@@ -1,11 +1,26 @@
 <h1>Welcome to the Draft Board</h1>
 <div class="draftBoard">
 
+  <div id="undratedHeader">
+    <h3>Overall Rankings</h3>
+
+  </div>
+  <div id="picksByPositionHeader">
+    <h3> Top Picks By Position</h3>
+  </div>
+  <div id="dratedHeader">
+    <h3>Draft History</h3>
+  </div>
+
   <div class="undrafted">
-    <h3>undrafted</h3>
+    <h3>Undrafted</h3>
     <div *ngFor="let player of players" (click)="goToPlayerPage(player)">
-      <div *ngIf="player.drafted === false">
-        <p>Player:{{player.name}} </p>
+      <div class="player" *ngIf="player.drafted === false">
+        <p>{{player.name}}  {{player.position}}</p>
+        <p>{{player.name}}  {{player.position}}</p>
+        <p>{{player.name}}  {{player.position}}</p>
+        <p>{{player.name}}  {{player.position}}</p>
+        <p>{{player.name}}  {{player.position}}</p>
 
       </div>
     </div>
@@ -13,47 +28,46 @@
   <div id="list-box">
 
     <div class="list-box" id="WR">
-      <h3>WIDE RECIEVER</h3>
+      <h3>Wide Receivers</h3>
       <div *ngFor="let player of players; let i = index" >
-          <div *ngIf="player.position === 'WR'" >
-            <p>Player:{{player.name}}--{{player.position}}</p>
-
+          <div  class="player" *ngIf="player.position === 'WR'" >
+            <p>{{player.name}}--{{player.position}}</p>
           </div>
       </div>
     </div>
 
     <div class="list-box" id="RB">
-      <h3>RB</h3>
+      <h3>Runningbacks</h3>
       <div *ngFor="let player of players; let i = index" >
-          <div *ngIf="player.position === 'RB'" >
-            <p>Player:{{player.name}}--{{player.position}}  </p>
+          <div class="player" *ngIf="player.position === 'RB'" >
+            <p>{{player.name}}--{{player.position}}  </p>
           </div>
       </div>
     </div>
 
     <div class="list-box" id="QB">
-      <h3>QB</h3>
+      <h3>Quarterbacks</h3>
       <div *ngFor="let player of players; let i = index" >
-          <div *ngIf="player.position === 'QB'" >
-            <p>Player:{{player.name}}--{{player.position}}  </p>
+          <div  class="player"*ngIf="player.position === 'QB'" >
+            <p>{{player.name}}--{{player.position}}  </p>
           </div>
       </div>
     </div>
 
     <div id="TE">
-      <h3>TE</h3>
-      <div *ngFor="let player of players; let i=index" (click)="draftPlayer(player,i)">
-          <p>Player:{{player.name}} </p>
+      <h3>Tightends</h3>
+      <div class="player" *ngFor="let player of players; let i=index" (click)="draftPlayer(player,i)">
+          <p>{{player.name}} </p>
       </div>
     </div>
 
   </div>
 
   <div class="drafted">
-    <h3>drafted</h3>
+    <h3>Drafted</h3>
     <div *ngFor="let player of undraftedPlayers" (click)="goToPlayerPage(player)">
-      <div *ngIf="player.drafted === true">
-        <p>Player:{{player.name}} </p>
+      <div class="player" *ngIf="player.drafted === true">
+        <p>{{player.name}} </p>
 
       </div>
     </div>
