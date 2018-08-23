@@ -8,9 +8,9 @@ export class PlayerService {
   constructor() { }
 
   getPlayers() {
-    return PLAYERS;
+    return PLAYERS.sort(function(a, b){return a.ranking - b.ranking});;
   }
-  
+
   getUndraftedPlayers() {
     return PLAYERS;
   }

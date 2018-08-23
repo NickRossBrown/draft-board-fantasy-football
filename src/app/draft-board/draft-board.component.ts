@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PlayerService } from '../player.service';
 import { Router } from '@angular/router';
 import { Player } from '../player.model';
+import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
 
 
 
@@ -10,7 +11,31 @@ import { Player } from '../player.model';
   selector: 'app-draft-board',
   templateUrl: './draft-board.component.html',
   styleUrls: ['./draft-board.component.css'],
-  providers: [PlayerService]
+  providers: [PlayerService],
+  animations: [
+
+    trigger('aniname', [
+      transition('* => *', [
+        query(':enter', style({ opacity: 0 }), {optional: true}),
+
+        query(':enter', stagger('300ms', [
+          animate('3s ease-in', keyframes([
+            style({opacity: 0, transform: 'translateY(-75%)', offset: 0}),
+            style({opacity: .5, transform: 'translateY(35px)',  offset: 0.3}),
+            style({opacity: 1, transform: 'translateY(0)',     offset: 1.0}),
+          ]))]), {optional: true}),
+
+        query(':leave', stagger('300ms', [
+          animate('.6s ease-in', keyframes([
+            style({opacity: 1, transform: 'translateY(0)', offset: 0}),
+            style({opacity: .5, transform: 'translateY(35px)',  offset: 0.3}),
+            style({opacity: 0, transform: 'translateY(-75%)',     offset: 1.0}),
+          ]))]), {optional: true}),
+
+      ])
+    ])
+
+  ]
 })
 export class DraftBoardComponent implements OnInit {
   players: Player[];
@@ -28,12 +53,7 @@ export class DraftBoardComponent implements OnInit {
     console.log(this.players)
     this.players = this.playerService.getPlayers();
     this.undraftedPlayers = this.playerService.getPlayers();
-    // this.undraftedPlayers = this.playerService.getUndraftedPlayers();
-    // this.players.forEach (player => {
-    // this.undraftedPlayers += player
-    // })
-    // this.undraftedPlayers += player
-    // })
+
   }
 
   goToPlayerPage(clickedPlayer: Player) {
@@ -47,6 +67,7 @@ export class DraftBoardComponent implements OnInit {
      console.log(player.drafted)
      this.players.splice(i,1)
    }
+
 
 
 

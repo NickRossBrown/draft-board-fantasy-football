@@ -1,5 +1,5 @@
 <h1>Welcome to the Draft Board</h1>
-<div class="draftBoard">
+<div class="draftBoard" >
 
   <div id="undratedHeader">
     <h3>Overall Rankings</h3>
@@ -12,44 +12,47 @@
     <h3>Draft History</h3>
   </div>
 
-  <div class="undrafted">
+  <div class="undrafted" [@aniname]="players.length">
     <h3>Undrafted</h3>
     <div *ngFor="let player of players" (click)="goToPlayerPage(player)">
       <div class="player" *ngIf="player.drafted === false">
-        <p>{{player.name}}  {{player.position}}</p>
-        <p>{{player.name}}  {{player.position}}</p>
-        <p>{{player.name}}  {{player.position}}</p>
-        <p>{{player.name}}  {{player.position}}</p>
-        <p>{{player.name}}  {{player.position}}</p>
+        <p>{{player.ranking}} {{player.name}}  {{player.position}}</p>
 
       </div>
     </div>
   </div>
+
   <div id="list-box">
 
     <div class="list-box" id="WR">
       <h3>Wide Receivers</h3>
-      <div *ngFor="let player of players; let i = index" >
+      <div class="player" *ngFor="let player of players; let i=index" (click)="draftPlayer(player,i)">
           <div  class="player" *ngIf="player.position === 'WR'" >
-            <p>{{player.name}}--{{player.position}}</p>
+            <div class="player" *ngIf="player.drafted === false">
+              <p>{{player.ranking}} {{player.name}}  {{player.position}}</p>
+            </div>
           </div>
       </div>
     </div>
 
     <div class="list-box" id="RB">
       <h3>Runningbacks</h3>
-      <div *ngFor="let player of players; let i = index" >
+      <div class="player" *ngFor="let player of players; let i=index" (click)="draftPlayer(player,i)">
           <div class="player" *ngIf="player.position === 'RB'" >
-            <p>{{player.name}}--{{player.position}}  </p>
+            <div class="player" *ngIf="player.drafted === false">
+              <p>{{player.ranking}} {{player.name}}  {{player.position}}</p>
+            </div>
           </div>
       </div>
     </div>
 
     <div class="list-box" id="QB">
       <h3>Quarterbacks</h3>
-      <div *ngFor="let player of players; let i = index" >
+      <div class="player" *ngFor="let player of players; let i=index" (click)="draftPlayer(player,i)">
           <div  class="player"*ngIf="player.position === 'QB'" >
-            <p>{{player.name}}--{{player.position}}  </p>
+            <div class="player" *ngIf="player.drafted === false">
+              <p>{{player.ranking}} {{player.name}}  {{player.position}}</p>
+            </div>
           </div>
       </div>
     </div>
@@ -57,7 +60,11 @@
     <div id="TE">
       <h3>Tightends</h3>
       <div class="player" *ngFor="let player of players; let i=index" (click)="draftPlayer(player,i)">
-          <p>{{player.name}} </p>
+        <div  class="player"*ngIf="player.position === 'TE'" >
+          <div class="player" *ngIf="player.drafted === false">
+            <p>{{player.ranking}} {{player.name}}  {{player.position}}</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -67,7 +74,7 @@
     <h3>Drafted</h3>
     <div *ngFor="let player of undraftedPlayers" (click)="goToPlayerPage(player)">
       <div class="player" *ngIf="player.drafted === true">
-        <p>{{player.name}} </p>
+        <p>{{player.ranking}} {{player.name}} </p>
 
       </div>
     </div>
