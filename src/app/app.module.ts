@@ -9,6 +9,8 @@ import { AboutComponent } from './about/about.component';
 import { DraftBoardComponent } from './draft-board/draft-board.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { PlayerDetailComponent } from './player-detail/player-detail.component';
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

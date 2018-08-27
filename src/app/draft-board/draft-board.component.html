@@ -12,19 +12,18 @@
     <h3>Draft History</h3>
   </div>
 
-  <div class="undrafted" [@aniname]="players.length">
+  <div class="undrafted" [@playerAnim]="players.length" >
     <h3>Undrafted</h3>
     <div *ngFor="let player of players" (click)="goToPlayerPage(player)">
       <div class="player" *ngIf="player.drafted === false">
         <p>{{player.ranking}} {{player.name}}  {{player.position}}</p>
-
       </div>
     </div>
   </div>
 
   <div id="list-box">
 
-    <div class="list-box" id="WR">
+    <div class="list-box" id="WR" [@playerAnim]="players.length">
       <h3>Wide Receivers</h3>
       <div class="player" *ngFor="let player of players; let i=index" (click)="draftPlayer(player,i)">
           <div  class="player" *ngIf="player.position === 'WR'" >
@@ -35,7 +34,7 @@
       </div>
     </div>
 
-    <div class="list-box" id="RB">
+    <div class="list-box" id="RB" [@playerAnim]="players.length">
       <h3>Runningbacks</h3>
       <div class="player" *ngFor="let player of players; let i=index" (click)="draftPlayer(player,i)">
           <div class="player" *ngIf="player.position === 'RB'" >
@@ -46,7 +45,7 @@
       </div>
     </div>
 
-    <div class="list-box" id="QB">
+    <div class="list-box" id="QB" [@playerAnim]="players.length">
       <h3>Quarterbacks</h3>
       <div class="player" *ngFor="let player of players; let i=index" (click)="draftPlayer(player,i)">
           <div  class="player"*ngIf="player.position === 'QB'" >
@@ -57,11 +56,11 @@
       </div>
     </div>
 
-    <div id="TE">
+    <div id="TE" [@playerAnim]="players.length">
       <h3>Tightends</h3>
-      <div class="player" *ngFor="let player of players; let i=index" (click)="draftPlayer(player,i)">
-        <div  class="player"*ngIf="player.position === 'TE'" >
-          <div class="player" *ngIf="player.drafted === false">
+      <div class="player" *ngFor="let player of players; let i=index" (click)="draftPlayer(player,i)" >
+        <div  class="player"*ngIf="player.position === 'TE'"  >
+          <div class="player" *ngIf="player.drafted === false" >
             <p>{{player.ranking}} {{player.name}}  {{player.position}}</p>
           </div>
         </div>
@@ -70,12 +69,11 @@
 
   </div>
 
-  <div class="drafted">
+  <div class="drafted" [@playerAnim]="undraftedPlayers.length" >
     <h3>Drafted</h3>
     <div *ngFor="let player of undraftedPlayers" (click)="goToPlayerPage(player)">
-      <div class="player" *ngIf="player.drafted === true">
-        <p>{{player.ranking}} {{player.name}} </p>
-
+      <div class="player"  *ngIf="player.drafted === true">
+        <p >{{player.ranking}} {{player.name}} </p>
       </div>
     </div>
   </div>

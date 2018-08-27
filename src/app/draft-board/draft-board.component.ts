@@ -14,28 +14,31 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from '@angul
   providers: [PlayerService],
   animations: [
 
-    trigger('aniname', [
+    trigger('playerAnim', [
       transition('* => *', [
         query(':enter', style({ opacity: 0 }), {optional: true}),
 
         query(':enter', stagger('300ms', [
-          animate('3s ease-in', keyframes([
+          animate('.3s ease-in', keyframes([
             style({opacity: 0, transform: 'translateY(-75%)', offset: 0}),
-            style({opacity: .5, transform: 'translateY(35px)',  offset: 0.3}),
-            style({opacity: 1, transform: 'translateY(0)',     offset: 1.0}),
+            style({opacity: .5, transform: 'translateY(35px)',  offset: 0.1}),
+            style({opacity: 1, transform: 'translateY(0)',     offset: .3}),
           ]))]), {optional: true}),
 
         query(':leave', stagger('300ms', [
-          animate('.6s ease-in', keyframes([
+          animate('.5s ease-in', keyframes([
             style({opacity: 1, transform: 'translateY(0)', offset: 0}),
             style({opacity: .5, transform: 'translateY(35px)',  offset: 0.3}),
             style({opacity: 0, transform: 'translateY(-75%)',     offset: 1.0}),
           ]))]), {optional: true}),
-
       ])
-    ])
+    ]),
+
+
+
 
   ]
+
 })
 export class DraftBoardComponent implements OnInit {
   players: Player[];
@@ -50,9 +53,8 @@ export class DraftBoardComponent implements OnInit {
   // this.playerService should anywhere in the draftbaord Component class.
 
   ngOnInit(){
-    console.log(this.players)
     this.players = this.playerService.getPlayers();
-    this.undraftedPlayers = this.playerService.getPlayers();
+    this.undraftedPlayers = [];
 
   }
 
@@ -61,11 +63,9 @@ export class DraftBoardComponent implements OnInit {
    };
 
    draftPlayer(player,i) {
-     console.log(player.drafted)
      player.drafted = true
-     this.undraftedPlayers.push(player)
-     console.log(player.drafted)
      this.players.splice(i,1)
+     this.undraftedPlayers.push(player)
    }
 
 
